@@ -1,0 +1,4 @@
+# Ignore generated harvest files and temporary data
+HWID/AutopilotHWID.csv
+HWID/temp_autopilot.csv
+*.csv
