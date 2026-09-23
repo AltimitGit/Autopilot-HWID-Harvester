@@ -31,7 +31,7 @@ USB_ROOT (e.g., D:\)
 └── HWID\
     └── Get-WindowsAutopilotInfo.ps1 (Optional: auto-downloads if connected online)
 ```
-Installation & Setup
+## Installation & Setup
 Clone or download this repository.
 
 Copy run_gethash.bat and gethash.ps1 directly to the root directory of your USB drive.
@@ -40,7 +40,7 @@ Copy run_gethash.bat and gethash.ps1 directly to the root directory of your USB 
 
 Note: If internet access is available on first run, gethash.ps1 will download this dependency automatically.
 
-Usage Instructions
+## Usage Instructions
 Option A: Running from OOBE (New / Factory Reset Devices)
 Boot the target device to the Windows initial setup screen (Region/Keyboard selection).
 
@@ -65,7 +65,7 @@ Click Yes on the User Account Control (UAC) prompt to grant Administrator rights
 
 Follow the on-screen prompts and review the output banner.
 
-Output & Intune Import
+## Output & Intune Import
 All harvested hashes are written to:
 \HWID\AutopilotHWID.csv
 
