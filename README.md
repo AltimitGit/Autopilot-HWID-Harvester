@@ -22,7 +22,7 @@ A lightweight, automated PowerShell and Batch script suite for harvesting Window
 
 To ensure correct relative path handling, structure your USB drive as follows:
 
-```text
+```
 USB_ROOT (e.g., D:\)
 ├── run_gethash.bat
 ├── gethash.ps1
@@ -30,3 +30,45 @@ USB_ROOT (e.g., D:\)
 ├── LICENSE
 └── HWID\
     └── Get-WindowsAutopilotInfo.ps1 (Optional: auto-downloads if connected online)
+```
+Installation & Setup
+Clone or download this repository.
+
+Copy run_gethash.bat and gethash.ps1 directly to the root directory of your USB drive.
+
+(Optional for Offline Environments) Create a folder named HWID on your USB root and place Get-WindowsAutopilotInfo.ps1 inside it.
+
+Note: If internet access is available on first run, gethash.ps1 will download this dependency automatically.
+
+Usage Instructions
+Option A: Running from OOBE (New / Factory Reset Devices)
+Boot the target device to the Windows initial setup screen (Region/Keyboard selection).
+
+Insert your USB drive.
+
+Press Shift + F10 (or Fn + Shift + F10) to launch the Command Prompt.
+
+Navigate to your USB drive letter (e.g., type d: and press Enter).
+
+Run the loader batch file:
+```
+run_gethash.bat
+```
+Respond to the prompt (clear CSV or append), wait for the success chime, and press Enter to exit.
+
+Option B: Running from an Active Windows Session
+Insert the USB drive into an active Windows desktop.
+
+Open the drive in File Explorer and double-click run_gethash.bat.
+
+Click Yes on the User Account Control (UAC) prompt to grant Administrator rights.
+
+Follow the on-screen prompts and review the output banner.
+
+Output & Intune Import
+All harvested hashes are written to:
+\HWID\AutopilotHWID.csv
+
+This CSV adheres strictly to Microsoft's schema and can be uploaded directly into the Microsoft Intune Admin Center:
+
+Devices > Enrollment > Windows > Devices > Import
